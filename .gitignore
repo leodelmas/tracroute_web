@@ -1,0 +1,93 @@
+# Cache, temp and personal files
+
+var/*
+#/.htaccess
+*.log
+npm-debug.log.*
+.sass-cache/
+/cache/*
+download/*
+/log/*
+/upload/*
+!/upload/index.php
+!/upload/axstorelocator-*.json
+docs/phpdoc-sf/
+composer.lock
+tests/Selenium/errorShots/
+tests/Selenium/errorDumps/
+themes/**/assets/cache/*.css
+themes/**/assets/cache/*.js
+
+/admin1189gutynxijazakewz/autoupgrade/*
+/admin1189gutynxijazakewz/backups/*
+/admin1189gutynxijazakewz/import/*
+
+!/admin1189gutynxijazakewz/import/.htaccess
+!/admin1189gutynxijazakewz/import/index.php
+
+themes/*/cache/*
+
+# Ne conserver que les répertoires essentiels
+# Ne pas versionner les images du catalogue
+img/c/*
+!img/c/index.php
+img/cms/*
+!img/cms/index.php
+img/m/*
+!img/m/index.php
+img/p/*
+!img/p/index.php
+img/scenes/*
+!img/scenes/index.php
+img/scenes/thumbs/*
+!img/scenes/thumbs/index.php
+img/st/*
+!img/st/index.php
+img/su/*
+!img/su/index.php
+img/tmp/*
+!img/tmp/index.php
+
+# Config
+
+config/settings.old.php
+config/xml/*
+!config/xml/index.php
+!config/smartyfront.config.inc.php
+tests/Selenium/settings.js
+themes/*/config/settings_*.json
+app/config/parameters.old.yml
+app/config/config.php
+
+
+# Vendors and dependencies
+bower_components/
+node_modules/
+composer.phar
+php-cs-fixer
+.grunt/*
+
+# Translations and emails templates
+translations/cldr/*
+
+# IDE
+.idea
+.project
+.settings
+.buildpath
+nbproject
+
+# Symfony
+/app/cache/*
+!app/cache/.gitkeep
+!/app/Resources/translations/default
+/app/test/cache/*
+!app/test/cache/.gitkeep
+/app/logs/*
+!app/logs/.gitkeep
+/app/phpunit.xml
+/web/bundles/
+/web/css/
+/web/js/
+/sitemap/*
+!/sitemap/index.php
