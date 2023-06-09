@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-06 09:00:07
+/* Smarty version 4.3.1, created on 2023-06-09 13:38:05
   from '/Users/leodelmas/dev/tracroute_web/modules/dashgoals/views/templates/hook/config.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647ed977b6c3a5_55596597',
+  'unifunc' => 'content_64830f1da7f5c0_60993925',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb80ac2735fac1f216d47b8f040a1ec80e6ab520' => 
     array (
       0 => '/Users/leodelmas/dev/tracroute_web/modules/dashgoals/views/templates/hook/config.tpl',
-      1 => 1673967872,
+      1 => 1679900394,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647ed977b6c3a5_55596597 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64830f1da7f5c0_60993925 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section id="dashgoals_config" class="dash_config hide">
 	<header><i class="icon-wrench"></i> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Configuration','d'=>'Admin.Global'),$_smarty_tpl ) );?>
 </header>

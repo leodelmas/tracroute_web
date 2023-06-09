@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-06 09:00:07
+/* Smarty version 4.3.1, created on 2023-06-09 13:38:05
   from '/Users/leodelmas/dev/tracroute_web/admin1189gutynxijazakewz/themes/default/template/nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647ed977cd83e5_48032308',
+  'unifunc' => 'content_64830f1dc0dd86_61782095',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647ed977cd83e5_48032308 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64830f1dc0dd86_61782095 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/leodelmas/dev/tracroute_web/vendor/smarty/smarty/libs/plugins/modifier.count.php','function'=>'smarty_modifier_count',),));
 ?>
 <nav class="nav-bar" role="navigation" id="nav-sidebar">

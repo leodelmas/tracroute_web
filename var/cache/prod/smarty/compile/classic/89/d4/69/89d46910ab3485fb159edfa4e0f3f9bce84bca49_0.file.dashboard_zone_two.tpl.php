@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-06 09:00:07
+/* Smarty version 4.3.1, created on 2023-06-09 13:38:05
   from '/Users/leodelmas/dev/tracroute_web/modules/dashproducts/views/templates/hook/dashboard_zone_two.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647ed977ba4640_76960466',
+  'unifunc' => 'content_64830f1dab9501_18492292',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647ed977ba4640_76960466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64830f1dab9501_18492292 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <section id="dashproducts" class="panel widget">
   <header class="panel-heading">

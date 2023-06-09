@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-06 09:00:32
+/* Smarty version 4.3.1, created on 2023-06-06 11:29:57
   from '/Users/leodelmas/dev/tracroute_web/themes/classic/templates/catalog/_partials/variant-links.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647ed990adf121_56131323',
+  'unifunc' => 'content_647efc95f1a8d6_67734257',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647ed990adf121_56131323 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1733603812647ed990ad9279_20372094';
+function content_647efc95f1a8d6_67734257 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '1311479757647efc95f13d99_93747848';
 ?>
 <div class="variant-links">
   <?php
