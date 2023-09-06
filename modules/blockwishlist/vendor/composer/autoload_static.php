@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4f2c4ea355ac7e33683d36bc4ad2116a
+class ComposerStaticInit1fa495cb93a41b1ebe2ef553c9a72c90
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -25,7 +25,6 @@ class ComposerStaticInit4f2c4ea355ac7e33683d36bc4ad2116a
         'BlockWishListActionModuleFrontController' => __DIR__ . '/../..' . '/controllers/front/action.php',
         'BlockWishlistListsModuleFrontController' => __DIR__ . '/../..' . '/controllers/front/lists.php',
         'BlockWishlistViewModuleFrontController' => __DIR__ . '/../..' . '/controllers/front/view.php',
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'PrestaShop\\Module\\BlockWishList\\Access\\CustomerAccess' => __DIR__ . '/../..' . '/src/Access/CustomerAccess.php',
         'PrestaShop\\Module\\BlockWishList\\Calculator\\StatisticsCalculator' => __DIR__ . '/../..' . '/src/Calculator/StatisticsCalculator.php',
         'PrestaShop\\Module\\BlockWishList\\Controller\\WishlistConfigurationAdminController' => __DIR__ . '/../..' . '/src/Controller/WishlistConfigurationAdminController.php',
@@ -50,9 +49,9 @@ class ComposerStaticInit4f2c4ea355ac7e33683d36bc4ad2116a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4f2c4ea355ac7e33683d36bc4ad2116a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4f2c4ea355ac7e33683d36bc4ad2116a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit4f2c4ea355ac7e33683d36bc4ad2116a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1fa495cb93a41b1ebe2ef553c9a72c90::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1fa495cb93a41b1ebe2ef553c9a72c90::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit1fa495cb93a41b1ebe2ef553c9a72c90::$classMap;
 
         }, null, ClassLoader::class);
     }

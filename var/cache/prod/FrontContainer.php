@@ -239,8 +239,6 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
             'prestashop.core.string.character_cleaner' => 'getPrestashop_Core_String_CharacterCleanerService',
             'prestashop.database.naming_strategy' => 'getPrestashop_Database_NamingStrategyService',
             'prestashop.translation.translator_language_loader' => 'getPrestashop_Translation_TranslatorLanguageLoaderService',
-            'product_comment_criterion_repository' => 'getProductCommentCriterionRepositoryService',
-            'product_comment_repository' => 'getProductCommentRepositoryService',
             'ps_accounts.context' => 'getPsAccounts_ContextService',
             'ps_accounts.facade' => 'getPsAccounts_FacadeService',
             'ps_accounts.installer' => 'getPsAccounts_InstallerService',
@@ -2117,15 +2115,12 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
         $c = new \Doctrine\Persistence\Mapping\Driver\MappingDriverChain();
 
         $d = ($this->services['annotation_reader'] ?? ($this->services['annotation_reader'] = new \Doctrine\Common\Annotations\AnnotationReader()));
-        $e = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($d, [0 => '/Users/leodelmas/dev/tracroute_web/modules/productcomments/src/Entity']);
-        $e->addExcludePaths([0 => '/Users/leodelmas/dev/tracroute_web/modules/productcomments/src/Entity/index.php']);
-        $f = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($d, [0 => '/Users/leodelmas/dev/tracroute_web/modules/ps_checkout/src/Entity']);
-        $f->addExcludePaths([0 => '/Users/leodelmas/dev/tracroute_web/modules/ps_checkout/src/Entity/index.php']);
+        $e = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($d, [0 => '/Users/leodelmas/dev/tracroute_web/modules/ps_checkout/src/Entity']);
+        $e->addExcludePaths([0 => '/Users/leodelmas/dev/tracroute_web/modules/ps_checkout/src/Entity/index.php']);
 
         $c->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($d, [0 => '/Users/leodelmas/dev/tracroute_web/src/PrestaShopBundle/Entity']), 'PrestaShop');
-        $c->addDriver($e, 'PrestaShop\\Module\\ProductComment\\Entity');
         $c->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($d, [0 => '/Users/leodelmas/dev/tracroute_web/modules/ps_accounts/src/Entity']), 'PrestaShop\\Module\\PsAccounts\\Entity');
-        $c->addDriver($f, 'PrestaShop\\Module\\PrestashopCheckout\\Entity');
+        $c->addDriver($e, 'PrestaShop\\Module\\PrestashopCheckout\\Entity');
 
         $a->setEntityNamespaces(['PrestaShopBundle\\Entity' => 'PrestaShop']);
         $a->setMetadataCache($b);
@@ -2142,7 +2137,6 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
         $a->setEntityListenerResolver(new \Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver($this));
         $a->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory(new \Symfony\Component\DependencyInjection\ServiceLocator([])));
         $a->addCustomStringFunction('regexp', 'DoctrineExtensions\\Query\\Mysql\\Regexp');
-        $a->addEntityNamespace('Moduleproductcomments', 'PrestaShop\\Module\\ProductComment\\Entity');
         $a->addEntityNamespace('ModulepsAccounts', 'PrestaShop\\Module\\PsAccounts\\Entity');
         $a->addEntityNamespace('ModulepsCheckout', 'PrestaShop\\Module\\PrestashopCheckout\\Entity');
 
@@ -2581,26 +2575,6 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
     protected function getPrestashop_Translation_TranslatorLanguageLoaderService()
     {
         return $this->services['prestashop.translation.translator_language_loader'] = new \PrestaShopBundle\Translation\TranslatorLanguageLoader(($this->services['prestashop.adapter.module.repository.module_repository'] ?? ($this->services['prestashop.adapter.module.repository.module_repository'] = new \PrestaShop\PrestaShop\Adapter\Module\Repository\ModuleRepository('/Users/leodelmas/dev/tracroute_web', '/Users/leodelmas/dev/tracroute_web/modules/'))));
-    }
-
-    /**
-     * Gets the public 'product_comment_criterion_repository' shared service.
-     *
-     * @return \PrestaShop\Module\ProductComment\Repository\ProductCommentCriterionRepository
-     */
-    protected function getProductCommentCriterionRepositoryService()
-    {
-        return $this->services['product_comment_criterion_repository'] = new \PrestaShop\Module\ProductComment\Repository\ProductCommentCriterionRepository(($this->services['doctrine.dbal.default_connection'] ?? $this->getDoctrine_Dbal_DefaultConnectionService()), 'ps_');
-    }
-
-    /**
-     * Gets the public 'product_comment_repository' shared service.
-     *
-     * @return \PrestaShop\Module\ProductComment\Repository\ProductCommentRepository
-     */
-    protected function getProductCommentRepositoryService()
-    {
-        return $this->services['product_comment_repository'] = new \PrestaShop\Module\ProductComment\Repository\ProductCommentRepository(($this->services['doctrine.dbal.default_connection'] ?? $this->getDoctrine_Dbal_DefaultConnectionService()), 'ps_', ($this->services['prestashop.adapter.legacy.configuration'] ?? ($this->services['prestashop.adapter.legacy.configuration'] = new \PrestaShop\PrestaShop\Adapter\Configuration()))->get("PRODUCT_COMMENTS_ALLOW_GUESTS"), ($this->services['prestashop.adapter.legacy.configuration'] ?? ($this->services['prestashop.adapter.legacy.configuration'] = new \PrestaShop\PrestaShop\Adapter\Configuration()))->get("PRODUCT_COMMENTS_MINIMAL_TIME"));
     }
 
     /**
@@ -3560,24 +3534,24 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
             'kernel.active_modules' => [
                 0 => 'ps_linklist',
                 1 => 'blockreassurance',
-                2 => 'psgdpr',
-                3 => 'ps_contactinfo',
-                4 => 'ps_languageselector',
-                5 => 'ps_currencyselector',
-                6 => 'ps_customersignin',
-                7 => 'ps_shoppingcart',
-                8 => 'ps_mainmenu',
-                9 => 'ps_searchbar',
-                10 => 'ps_imageslider',
-                11 => 'ps_featuredproducts',
-                12 => 'ps_banner',
-                13 => 'ps_customtext',
-                14 => 'ps_specials',
-                15 => 'ps_newproducts',
-                16 => 'ps_bestsellers',
-                17 => 'ps_socialfollow',
-                18 => 'ps_customeraccountlinks',
-                19 => 'productcomments',
+                2 => 'blockwishlist',
+                3 => 'psgdpr',
+                4 => 'ps_contactinfo',
+                5 => 'ps_languageselector',
+                6 => 'ps_currencyselector',
+                7 => 'ps_customersignin',
+                8 => 'ps_shoppingcart',
+                9 => 'ps_mainmenu',
+                10 => 'ps_searchbar',
+                11 => 'ps_imageslider',
+                12 => 'ps_featuredproducts',
+                13 => 'ps_banner',
+                14 => 'ps_customtext',
+                15 => 'ps_specials',
+                16 => 'ps_newproducts',
+                17 => 'ps_bestsellers',
+                18 => 'ps_socialfollow',
+                19 => 'ps_customeraccountlinks',
                 20 => 'ps_categorytree',
                 21 => 'contactform',
                 22 => 'ps_sharebuttons',
@@ -3616,22 +3590,23 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
                 55 => 'dashproducts',
                 56 => 'ps_faviconnotificationbo',
                 57 => 'ps_categoryproducts',
-                58 => 'ps_emailalerts',
-                59 => 'mbeshipping',
-                60 => 'statscheckup',
-                61 => 'dashactivity',
-                62 => 'ps_supplierlist',
-                63 => 'ps_edition_basic',
-                64 => 'ps_crossselling',
-                65 => 'ps_checkpayment',
-                66 => 'ps_metrics',
-                67 => 'graphnvd3',
-                68 => 'ps_googleanalytics',
-                69 => 'statsbestvouchers',
-                70 => 'statsbestmanufacturers',
-                71 => 'gsitemap',
-                72 => 'statsstock',
-                73 => 'ps_facetedsearch',
+                58 => 'mbeshipping',
+                59 => 'statscheckup',
+                60 => 'dashactivity',
+                61 => 'ps_supplierlist',
+                62 => 'ps_edition_basic',
+                63 => 'ps_crossselling',
+                64 => 'ps_checkpayment',
+                65 => 'ps_metrics',
+                66 => 'graphnvd3',
+                67 => 'ps_googleanalytics',
+                68 => 'statsbestvouchers',
+                69 => 'statsbestmanufacturers',
+                70 => 'gsitemap',
+                71 => 'statsstock',
+                72 => 'ps_facetedsearch',
+                73 => 'colissimo',
+                74 => 'dpdfrance',
             ],
             'ps_cache_dir' => '/Users/leodelmas/dev/tracroute_web/var/cache/prod/',
             'mail_themes_uri' => '/mails/themes',

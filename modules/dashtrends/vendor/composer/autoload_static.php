@@ -4,17 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit95e117ea5155e05033a33338b68e5ba5
+class ComposerStaticInitc3349d6e0ead5518345f61c5448b0d35
 {
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'dashtrends' => __DIR__ . '/../..' . '/dashtrends.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit95e117ea5155e05033a33338b68e5ba5::$classMap;
+            $loader->classMap = ComposerStaticInitc3349d6e0ead5518345f61c5448b0d35::$classMap;
 
         }, null, ClassLoader::class);
     }
