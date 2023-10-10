@@ -27,27 +27,6 @@ themes/**/assets/cache/*.js
 
 themes/*/cache/*
 
-# Ne conserver que les répertoires essentiels
-# Ne pas versionner les images du catalogue
-img/c/*
-!img/c/index.php
-img/cms/*
-!img/cms/index.php
-img/m/*
-!img/m/index.php
-img/p/*
-!img/p/index.php
-img/scenes/*
-!img/scenes/index.php
-img/scenes/thumbs/*
-!img/scenes/thumbs/index.php
-img/st/*
-!img/st/index.php
-img/su/*
-!img/su/index.php
-img/tmp/*
-!img/tmp/index.php
-
 # Config
 
 config/settings.old.php
